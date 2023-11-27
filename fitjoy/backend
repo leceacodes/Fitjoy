@@ -1,0 +1,16 @@
+# Create the backend directory
+!mkdir fitjoy/backend
+!mkdir fitjoy/backend/src
+
+# Create the app.py file
+%%writefile fitjoy/backend/src/app.py
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, FitJoy Backend!'
+
+if __name__ == '__main__':
+    app.run(port=3001)
